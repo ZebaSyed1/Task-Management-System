@@ -1,10 +1,7 @@
 package com.taskmanagement.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +23,6 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 	@Autowired
 	TaskManagerRepo taskRepo;
 
-	//	@Autowired
-	//	TaskDto taskDto;
 
 
 	@Override
@@ -35,10 +30,8 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 
 
 
-		//	if (!taskRepo.existsById(taskDto.getTakId())) {
 
 		TaskManagement task = new TaskManagement();
-		//		task.setTaskId(taskDto.getTaskId());
 		task.setTaskName(taskDto.getTaskName());
 		task.setTaskDesc(taskDto.getTaskDesc());
 		task.setTaskCreationDate(taskDto.getTaskCreationDate());
@@ -62,45 +55,7 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 						.toList()));
 		return dto;
 	}
-	//	@Override
-	//	public String updateStatus(UUID taskId) {
-	//		if (taskRepo.existsById(taskId)) {
-	//			TaskManagement task=taskRepo.getTaskById(taskId);
-	//			 TaskStatus newStatus;
-	//		        switch (currentStatus) {
-	//		            case toDo:
-	//		                newStatus = TaskStatus.IN_PROGRESS;
-	//		                break;
-	//		            case IN_PROGRESS:
-	//		                newStatus = TaskStatus.COMPLETED;
-	//		                break;
-	//		            case COMPLETED:
-	//		            default:
-	//		                newStatus = TaskStatus.TODO;
-	//		                break;
-	////			
-	////			if(task.getTaskStatus().equals(TaskStatus.ToDo)) {
-	////				task.setTaskStatus(TaskStatus.InProgress);
-	////			}
-	////			
-	////		}
-	////		return null;
-	////	}
-//	@Override
-//	public TaskDto1 updateStatus(UUID taskId,TaskStatus task) {
-//
-//		TaskManagement tasks=new TaskManagement();
-//		if (tasks.getTaskStatus()==ToDo){
-//			tasks.setTaskStatus(TaskStatus.InProgress);
-//		}
-//			if(tasks.getTaskStatus()==InProgress) {
-//				tasks.setTaskStatus(NeedsReview);
-//
-//			}
-//			return taskDto;
-//			
-//
-//		}
+
 	@Override
 	public StringDto deleteTask(UUID taskId) {
 		// TODO Auto-generated method stub
@@ -122,108 +77,7 @@ public class TaskManagerServiceImpl implements TaskManagerService {
 		return dto;
 	}
 	
-//	}
-//	@Override
-//	public List<TaskDto> getTaskById(UUID taskId) {
-//		
-//		TaskManagement task = taskRepo.getTaskById(taskId);
-//		if (task != null && task.getDeleted().equals(Deleted.False)) {
-//		    TaskDto dto = new TaskDto();
-////	    List<TaskManagement> tasks = new ArrayList<>();
-////	    tasks=taskRepo.getTaskById(taskId).stream()
-////	            .filter(task -> task.getDeleted().equals(Deleted.False))
-////	            .collect(Collectors.toList());
-//
-//	    List<TaskDto> dtos = new ArrayList<>();
-//	    for (TaskManagement t : tasks) {
-//	        TaskDto dto = new TaskDto();
-//
-//	        // Map TaskManagement fields to TaskDto1
-//	        dto.setTaskId(t.getTaskId());
-//	        dto.setTaskName(t.getTaskName());
-//	        dto.setTaskDesc(t.getTaskDesc());
-//	        dto.setTaskCreationDate(t.getTaskCreationDate());
-////	        dto.setStatus(t.getStatus());
-//	        // Add other fields as needed
-//
-//	        dtos.add(dto);
-//	    }
-//
-//	    return dtos;
-//	}
-//	@Override
-//	public List<TaskDto> getTasksByID(UUID taskId) {
-//		// TODO Auto-generated method stub
-//		List<TaskDto> t =getTasksByID(taskId);
-//		
-//		if(!t.isEmpty()) {
-//			TaskManagement tm = new TaskManagement()
-//			List<TaskDto> ts = new ArrayList<>();
-//			t.stream().filter(ts->tm.getClass().c)
-//		}
-//		return null;
-//	}
-	
-//	@Override
-//	public List<TaskDto1> getTasksByID(UUID taskId) {
-//	    List<TaskManagement> tasks = taskRepo.getTasksById(taskId);
-//
-//	    List<TaskDto1> dtos = new ArrayList<>();
-//
-//	    for (TaskManagement task : tasks) {
-//	        if (task.getStatus() == Deleted.False) {
-//	            TaskDto1 dto = new TaskDto1();
-//	            dto.setTasks(tasks);
-//	         
-//	            dtos.add(dto);
-//	        }
-//	    }
-//
-//	    return dtos;
-//	}
 
-//	@Override
-//	public TaskDto2 getAllTasks(UUID taskId) {
-//		TaskDto2 dto = new TaskDto2();
-//		dto.setTasks(taskRepo.getTaskById(taskId));
-//		return dto;
-//	}
-
-		
-//	@Override
-//	public TaskDto getTaskById(UUID taskId) {
-//		
-//	        TaskManagement task = taskRepo.getTaskById(taskId);
-//
-//	        if (task != null && task.getStatus() == Deleted.False) {
-//	            TaskDto dto = new TaskDto();
-//	            dto.setTaskId(task.getTaskId());
-//	            dto.setTaskName(task.getTaskName());
-//	            dto.setTaskDesc(task.getTaskDesc());
-//	            dto.setTaskCreationDate(task.getTaskCreationDate());
-//	            return dto;
-//	        }
-//			return null;
-//			
-//
-////	}
-//	 @Override
-//	    public TaskDto getTaskDetails(UUID taskId) {
-//	        TaskManagement task = taskRepo.getTaskById(taskId);
-//
-//	        if (task != null && task.getStatus() == Deleted.False) {
-//	            TaskDto dto = new TaskDto();
-//	            dto.setTaskId(task.getTaskId());
-//	            dto.setTaskName(task.getTaskName());
-//	            dto.setTaskDesc(task.getTaskDesc());
-//	            dto.setTaskCreationDate(task.getTaskCreationDate());
-//	           
-//	            
-//
-//	        dto;  // or throw new RuntimeException("Task not found")
-//	    }
-//			return null;
-//	}
 }
 
 

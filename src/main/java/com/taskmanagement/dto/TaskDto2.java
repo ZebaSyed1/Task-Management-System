@@ -1,7 +1,5 @@
 package com.taskmanagement.dto;
 
-import java.util.List;
-
 import com.taskmanagement.model.TaskManagement;
 
 import lombok.AllArgsConstructor;

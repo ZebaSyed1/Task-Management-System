@@ -1,7 +1,6 @@
 package com.taskmanagement.repository; 
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -24,6 +23,4 @@ public interface TaskManagerRepo extends JpaRepository<TaskManagement, UUID>{
 	@Query(value="select t from TaskManagement t where t.taskId =:taskId")
 	List<TaskManagement> getTasksById(UUID taskId);
 	
-//	@Query(value = "select t.taskName from Task t")
-//	List<String> getAllTask();
 }

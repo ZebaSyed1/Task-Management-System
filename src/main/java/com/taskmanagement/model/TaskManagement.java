@@ -1,10 +1,7 @@
 package com.taskmanagement.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.UUID;
-
-import org.springframework.cglib.core.Local;
 
 import com.taskmangement.enums.Deleted;
 import com.taskmangement.enums.TaskStatus;

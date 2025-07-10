@@ -1,8 +1,6 @@
 package com.taskmanagement.controller;
 
-import java.util.List;
 import java.util.UUID;
-import com.taskmanagement.dto.StringDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,11 +10,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.taskmanagement.dto.StringDto;
 import com.taskmanagement.dto.TaskDto;
 import com.taskmanagement.dto.TaskDto1;
 import com.taskmanagement.dto.TaskDto2;
@@ -40,7 +38,6 @@ public class TaskController {
 			produces=MediaType.APPLICATION_JSON_VALUE)
 
 	public ResponseEntity<TaskManagement> post(
-			//			@PathVariable("taskId") UUID taskId,
 			@RequestBody TaskDto taskDto) 
 	{
 		return new ResponseEntity<>(taskService.addTasK(taskDto), HttpStatus.CREATED);
@@ -61,7 +58,6 @@ public class TaskController {
 	}
 
 	@DeleteMapping(value="/tasks/{taskId}",
-//			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<StringDto> delete(@PathVariable UUID taskId)
 	{
@@ -75,12 +71,6 @@ public class TaskController {
 		return new ResponseEntity<>(taskService.getAllTasks(taskId), HttpStatus.OK);
 	}
 
-	//	@PutMapping(value="/task/tasks/status",produces = MediaType.APPLICATION_JSON_VALUE)
-	//	@Operation(summary = "Get all tasks Based On Status")
-	//	public ResponseEntity<TaskDto1> put(@RequestParam TaskManagement task)
-	//	{
-	//		return new ResponseEntity<>(taskService.updateStatus(task),HttpStatus.OK);
-	//	}
 
 }
 
