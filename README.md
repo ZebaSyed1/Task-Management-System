@@ -120,6 +120,7 @@ Frontend integration with React or Angular
 Pull requests are welcome. Feel free to open issues to discuss bugs or feature enhancements.
 
 
+"💼 I offer freelance backend development (Spring Boot, REST APIs, JPA, etc). Contact me at [your email] or via LinkedIn.”
 
 👩‍💻 Author
 Zeba Syed
